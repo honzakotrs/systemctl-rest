@@ -72,7 +72,9 @@ exports.getDarkIceStatus = function (request, response) {
 exports.getStreamStatus = function (request, response) {
 	let streamUrl = request.query.s;
 	if (streamUrl != null && streamUrl !== '') {
+		console.log('Stream url: ' + streamUrl);
 		http.get(streamUrl, function (res) {
+			console.log(res);
 			response.json({
 				status: res.statusCode === 200
 			});
