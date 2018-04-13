@@ -1,6 +1,6 @@
 {
   "name": "darkice-rest",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple REST server to manipulate darkice audio streaming service service via systemctl",
   "main": "server.js",
   "scripts": {
