@@ -25,15 +25,21 @@ exports.disableDarkIce = function (request, response) {
 };
 
 exports.startDarkIce = function (request, response) {
-    return ctl.start(DARK_ICE);
+    return ctl.start(DARK_ICE).then(function (result) {
+        response.json({result: true});
+    });
 };
 
 exports.stopDarkIce = function (request, response) {
-    return ctl.stop(DARK_ICE);
+    return ctl.stop(DARK_ICE).then(function (result) {
+        response.json({result: true});
+    });
 };
 
 exports.restartDarkIce = function (request, response) {
-    return ctl.restart(DARK_ICE);
+    return ctl.restart(DARK_ICE).then(function (result) {
+        response.json({result: true});
+    });
 };
 
 exports.getDarkIceStatus = function (request, response) {
