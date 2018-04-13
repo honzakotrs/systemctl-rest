@@ -1,6 +1,7 @@
 'use strict';
 
 let express = require('express');
+let handlers = require('./handlers');
 let server = express();
 let port = process.argv[2] || 8181;
 
