@@ -1,7 +1,7 @@
 {
   "name": "darkice-rest",
-  "version": "0.2.0",
-  "description": "Simple REST server to manipulate darkice audio streaming service service via systemctl",
+  "version": "0.2.1",
+  "description": "Simple REST server to manipulate darkice audio streaming service via systemctl",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
