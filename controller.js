@@ -3,11 +3,11 @@ const DARK_ICE = 'darkice';
 var ctl = require('sysctlx');
 
 function parseEnableResponse(raw) {
-    return raw == '' || raw.match(/created symlink/i);
+    return raw === '' || raw.match(/created symlink/i) !== null;
 }
 
 function parseDisableResponse(raw) {
-    return raw == '' || raw.match(/removed/i);
+    return raw == '' || raw.match(/removed/i) !== null;
 }
 
 exports.enableDarkIce = function (request, response) {
