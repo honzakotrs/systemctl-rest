@@ -6,7 +6,7 @@ var server = express();
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 
-var routes = require('routes');
+var routes = require('./routes.js');
 routes(server);
 
 server.listen(port);
