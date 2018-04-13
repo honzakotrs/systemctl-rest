@@ -9,5 +9,4 @@ module.exports = function(server) {
 	server.get('/darkice/start', handlers.startDarkIce);
 	server.get('/darkice/stop', handlers.stopDarkIce);
 	server.get('/darkice/restart', handlers.restartDarkIce);
-	server.get('/stream', handlers.getStreamStatus);
 };
