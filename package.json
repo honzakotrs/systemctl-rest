@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/plesatejvlk/darkice-rest#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
     "sysctlx": "0.0.7"
   }
 }
