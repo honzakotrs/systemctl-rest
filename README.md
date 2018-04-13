@@ -17,3 +17,7 @@ around native linux systemctl command (leveraging **sysctlx** package).
 #### Usage
 
 `$ sudo node darkice-rest 8080`
+
+#### References
+- http://www.darkice.org/
+- https://www.npmjs.com/package/sysctlx
