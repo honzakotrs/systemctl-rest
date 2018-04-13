@@ -1,6 +1,6 @@
 'use strict';
-const DARK_ICE = 'darkice';
 
+const DARK_ICE = 'darkice';
 let ctl = require('sysctlx');
 
 function parseEnableResponse(raw) {

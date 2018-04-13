@@ -1,8 +1,8 @@
 {
   "name": "darkice-rest",
-  "version": "0.0.1",
-  "description": "Simple REST server to manipulate systemd darkice audio streaming service",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Simple REST server to manipulate darkice audio streaming service service via systemctl",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,14 +15,13 @@
     "rest",
     "server"
   ],
-  "author": "Jan Kotrs <honza@kotrs.cz>",
-  "license": "ISC",
+  "author": "Honza Kotrs <honza@kotrs.cz>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/plesatejvlk/darkice-rest/issues"
   },
   "homepage": "https://github.com/plesatejvlk/darkice-rest#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "sysctlx": "0.0.7"
   }
