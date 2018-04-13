@@ -6,4 +6,6 @@ module.exports = function(server) {
 	server.route('/darkice')
 		.get(controller.status);
 		//.post(todoList.create_a_task);
+    server.route('/darkice/enable')
+        .get(controller.enableDarkIce);
 };

@@ -8,34 +8,35 @@ module.exports = function (server) {
         return raw == '' || raw.match(/created symlink/i);
     }
 
-    return {
-        enableDarkIce: function (request, result) {
-            ctl.enable(DARK_ICE).then(function (ctlResult) {
-                console.log(ctlResult);
-                result.json(ctlResult);
-            }).catch(function (err) {
-                result.send(err); // never happens
-            });
-        },
-        disableDarkIce: function () {
-            return ctl.disable(DARK_ICE);
-        },
-        startDarkIce: function () {
-            return ctl.start(DARK_ICE);
-        },
-        stopDarkIce: function () {
-            return ctl.stop(DARK_ICE);
-        },
-        restartDarkIce: function () {
-            return ctl.restart(DARK_ICE);
-        },
-        getDarkIceStatus: function (request, result) {
-            ctl.status(DARK_ICE).then(function (status) {
-                result.json(status);
-            }).catch(function (err) {
-                result.send(err);
-            });
-        }
-    }
+    exports.enableDarkIce = function (request, response) {
+        ctl.enable(DARK_ICE).then(function (ctlResult) {
+            console.log(ctlResult);
+            response.json({result: parseEnableResponse(ctlResult)});
+        });
+    };
+
+    exports.disableDarkIce = function (request, response) {
+        return ctl.disable(DARK_ICE);
+    };
+
+    exports.startDarkIce = function (request, response) {
+        return ctl.start(DARK_ICE);
+    };
+
+    exports.stopDarkIce = function (request, response) {
+        return ctl.stop(DARK_ICE);
+    };
+
+    exports.restartDarkIce = function (request, response) {
+        return ctl.restart(DARK_ICE);
+    };
+
+    exports.getDarkIceStatus = function (request, response) {
+        ctl.status(DARK_ICE).then(function (status) {
+            response.json(status);
+        }).catch(function (err) {
+            response.send(err);
+        });
+    };
 
 };
