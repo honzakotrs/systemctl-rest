@@ -3,9 +3,6 @@ module.exports = function(server) {
 	var controller = require('./controller.js');
 
 	// todoList Routes
-	server.route('/darkice')
-		.get(controller.status);
-		//.post(todoList.create_a_task);
-    server.route('/darkice/enable')
-        .get(controller.enableDarkIce);
+	server.get('/darkice', controller.getDarkIceStatus);
+    server.get('/darkice/enable', controller.enableDarkIce);
 };
