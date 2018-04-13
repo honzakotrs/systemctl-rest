@@ -5,4 +5,5 @@ module.exports = function(server) {
 	// todoList Routes
 	server.get('/darkice', controller.getDarkIceStatus);
     server.get('/darkice/enable', controller.enableDarkIce);
+    server.get('/darkice/disable', controller.disableDarkIce);
 };

@@ -6,6 +6,10 @@ function parseEnableResponse(raw) {
     return raw == '' || raw.match(/created symlink/i);
 }
 
+function parseDisableResponse(raw) {
+    return raw == '' || raw.match(/removed/i);
+}
+
 exports.enableDarkIce = function (request, response) {
     ctl.enable(DARK_ICE).then(function (ctlResult) {
         console.log(ctlResult);
@@ -14,7 +18,10 @@ exports.enableDarkIce = function (request, response) {
 };
 
 exports.disableDarkIce = function (request, response) {
-    return ctl.disable(DARK_ICE);
+    return ctl.disable(DARK_ICE).then(function (ctlResult) {
+        console.log(ctlResult);
+        response.json({result: parseDisableResponse(ctlResult)});
+    });
 };
 
 exports.startDarkIce = function (request, response) {
