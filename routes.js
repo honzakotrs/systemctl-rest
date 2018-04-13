@@ -2,7 +2,6 @@
 module.exports = function(server) {
 	var handlers = require('./handlers.js');
 
-	// todoList Routes
 	server.get('/darkice', handlers.getDarkIceStatus);
 	server.get('/darkice/enable', handlers.enableDarkIce);
 	server.get('/darkice/disable', handlers.disableDarkIce);

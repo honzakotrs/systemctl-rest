@@ -2,7 +2,6 @@
 const DARK_ICE = 'darkice';
 
 let ctl = require('sysctlx');
-let http = require('http');
 
 function parseEnableResponse(raw) {
 	return raw === '' || raw.match(/created symlink/i) !== null;
