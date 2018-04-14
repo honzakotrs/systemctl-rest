@@ -67,7 +67,11 @@ exports.restartService = function (request, response) {
 exports.getServiceStatus = function (request, response) {
 	let service = request.params.service;
 	ctl.status(service).then(function (status) {
-		response.json(status);
+		if (status) {
+			response.json(status);
+		} else {
+			sendError(response, 'Unknown service \'' + service + '\'');
+		}
 	}).catch(function (err) {
 		sendError(response, err);
 	});
