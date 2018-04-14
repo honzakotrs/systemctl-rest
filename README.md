@@ -1,4 +1,6 @@
 # darkice-rest
+[![Build Status](https://travis-ci.org/plesatejvlk/darkice-rest.svg?branch=master)](https://travis-ci.org/plesatejvlk/darkice-rest)
+
 REST endpoint for manipulation of darkice system service. This serves as a thin wrapper
 around native linux systemctl command (leveraging **sysctlx** package).
 
