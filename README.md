@@ -1,4 +1,5 @@
 # systemctl-rest
+[![npm version](https://badge.fury.io/js/systemctl-rest.svg)](https://badge.fury.io/js/systemctl-rest)
 [![Build Status](https://travis-ci.org/plesatejvlk/systemctl-rest.svg?branch=master)](https://travis-ci.org/plesatejvlk/systemctl-rest)
 
 REST endpoint for manipulation of system services. This serves as a thin wrapper
