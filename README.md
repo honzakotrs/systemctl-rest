@@ -1,5 +1,5 @@
 # systemctl-rest
-[![Build Status](https://travis-ci.org/plesatejvlk/systemctl.svg?branch=master)](https://travis-ci.org/plesatejvlk/systemctl-rest)
+[![Build Status](https://travis-ci.org/plesatejvlk/systemctl-rest.svg?branch=master)](https://travis-ci.org/plesatejvlk/systemctl-rest)
 
 REST endpoint for manipulation of system services. This serves as a thin wrapper
 around native linux systemctl command (leveraging **sysctlx** package).
