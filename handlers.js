@@ -1,6 +1,5 @@
 'use strict';
 
-const DARK_ICE = 'darkice';
 let ctl = require('sysctlx');
 
 function parseEnableResponse(raw) {
@@ -20,8 +19,9 @@ function sendOk(response) {
 	response.json({result: true});
 }
 
-exports.enableDarkIce = function (request, response) {
-	ctl.enable(DARK_ICE).then(function (result) {
+exports.enableService = function (request, response) {
+	let service = request.params.service;
+	ctl.enable(service).then(function (result) {
 		console.log(result);
 		if (parseEnableResponse(result)) {
 			sendOk(response);
@@ -31,8 +31,9 @@ exports.enableDarkIce = function (request, response) {
 	});
 };
 
-exports.disableDarkIce = function (request, response) {
-	ctl.disable(DARK_ICE).then(function (result) {
+exports.disableService = function (request, response) {
+	let service = request.params.service;
+	ctl.disable(service).then(function (result) {
 		console.log(result);
 		if (parseDisableResponse(result)) {
 			sendOk(response);
@@ -42,26 +43,30 @@ exports.disableDarkIce = function (request, response) {
 	});
 };
 
-exports.startDarkIce = function (request, response) {
-	ctl.start(DARK_ICE).then(function (result) {
+exports.startService = function (request, response) {
+	let service = request.params.service;
+	ctl.start(service).then(function (result) {
 		sendOk(response);
 	});
 };
 
-exports.stopDarkIce = function (request, response) {
-	ctl.stop(DARK_ICE).then(function (result) {
+exports.stopService = function (request, response) {
+	let service = request.params.service;
+	ctl.stop(service).then(function (result) {
 		sendOk(response);
 	});
 };
 
-exports.restartDarkIce = function (request, response) {
-	ctl.restart(DARK_ICE).then(function (result) {
+exports.restartService = function (request, response) {
+	let service = request.params.service;
+	ctl.restart(service).then(function (result) {
 		sendOk(response);
 	});
 };
 
-exports.getDarkIceStatus = function (request, response) {
-	ctl.status(DARK_ICE).then(function (status) {
+exports.getServiceStatus = function (request, response) {
+	let service = request.params.service;
+	ctl.status(service).then(function (status) {
 		response.json(status);
 	}).catch(function (err) {
 		sendError(response, err);

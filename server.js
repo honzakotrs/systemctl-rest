@@ -5,12 +5,12 @@ let handlers = require('./handlers');
 let server = express();
 let port = process.argv[2] || 8181;
 
-server.get('/darkice', handlers.getDarkIceStatus);
-server.get('/darkice/enable', handlers.enableDarkIce);
-server.get('/darkice/disable', handlers.disableDarkIce);
-server.get('/darkice/start', handlers.startDarkIce);
-server.get('/darkice/stop', handlers.stopDarkIce);
-server.get('/darkice/restart', handlers.restartDarkIce);
+server.get('/:service', handlers.getServiceStatus);
+server.get('/:service/enable', handlers.enableService);
+server.get('/:service/disable', handlers.disableService);
+server.get('/:service/start', handlers.startService);
+server.get('/:service/stop', handlers.stopService);
+server.get('/:service/restart', handlers.restartService);
 
 server.listen(port);
-console.log('DarkIce systemctl server started on port: ' + port);
+console.log('systemctl-rest server started on port: ' + port);
