@@ -37,7 +37,7 @@ Please note that in this scenario you need to retrieve the port and start listen
 on it yourself:
 
 ```
-let server = require('systemctl-rest');
+let server = require('systemctl-rest').server;
 # .. add your paths
 server.get('/my/custom/path', myHandlerFunction);
 # .. start the server

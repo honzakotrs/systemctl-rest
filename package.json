@@ -1,6 +1,6 @@
 {
   "name": "systemctl-rest",
-  "version": "0.3.3",
+  "version": "0.3.5",
   "description": "Simple REST server to manipulate system services via systemctl",
   "main": "server.js",
   "scripts": {
